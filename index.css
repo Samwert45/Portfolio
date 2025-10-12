@@ -2,15 +2,22 @@
     font-family: 'ClimateCrisis';
     src: url('font/ClimateCrisis.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'ChunkFive-Regular';
     src: url('font/ChunkFive-Regular.otf') format('opentype');
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: #131200;
+}
+
 .container-presentation {
     display: flex;
     justify-content: center;
@@ -18,11 +25,12 @@
     height: 100vh;
     background-color: #131200;
 }
+
 .presentation {
     width: 70%;
     color: #000;
-    flex-direction: column;
 }
+
 .Bonjourjesuis {
     display: flex;
     justify-content: space-between;
@@ -30,18 +38,19 @@
     width: 80%;
     margin-left: 4%;
 }
+
 .Bonjour {
     font-family: 'ClimateCrisis', sans-serif;
     color: #8555c3;
     font-size: 2.5rem;
-    margin: 0%;
 }
+
 #jesuis {
     font-size: 1.5rem;
     color: #8555c3;
     text-align: right;
-    margin: 0%;
 }
+
 h1 {
     font-family: 'ChunkFive-Regular', sans-serif;
     font-size: 8rem;
@@ -50,6 +59,7 @@ h1 {
     margin-bottom: -2%;
     margin-top: -2%;
 }
+
 .etdiant {
     font-family: 'ClimateCrisis', sans-serif;
     color: #8555c3;
@@ -58,14 +68,16 @@ h1 {
     width: 50%;
     margin-left: 37%;
 }
-/* container-nav */
+
 .container-nav {
-    background-color: #131200;
     padding: 10px 0;
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: 70vh;
+    background: linear-gradient(to top, #3f2361, #131200);
 }
+
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -75,34 +87,29 @@ h1 {
     width: 85%;
     margin-left: auto;
 }
-.line {
-    border-left: 2px solid #8555c3;
-    height: 60%;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-}
+
 .TextNav {
     font-size: 4rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: #FFFFFF;
     font-family: 'ChunkFive-Regular', sans-serif;
 }
+
 .image-container {
-    width: 600px;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 500px;
+    height: 500px;
+    position: relative;
     margin-right: 10%;
 }
+
 .image-hover {
-    width: 500px;
+    width: 100%;
     height: 100%;
     opacity: 0;
     position: absolute;
+    top: 0;
+    left: 0;
     transform: translateY(50px) scale(0.8);
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -111,17 +118,105 @@ h1 {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
-.image-hover img {
-    border-radius: 20px;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+
 a {
     text-decoration: none;
     color: #FFFFFF;
     transition: color 0.3s ease;
 }
+
 a:hover {
+    color: #3f2361;
+}
+
+.navbar {
+        font-family: 'ChunkFive-Regular', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #8555c3;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #8555c3;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8555c3;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+        font-size: 0.9rem;
+    }
+}
+
+footer {
+    background-color: #3f2361;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    font-family: 'ChunkFive-Regular', sans-serif;
+}
+
+@media (max-width: 1200px) {
+    .nav {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    .TextNav {
+        font-size: 2rem;
+    }
 }

@@ -2,10 +2,22 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Sami</title>
     <link rel="stylesheet" href="index.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
+    <nav class="navbar">
+    <div class="logo"></div>
+    <ul class="nav-links">
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#experiences">Expériences</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
     <div class="container-presentation">
         <div class="presentation">
             <div class="Bonjourjesuis">
@@ -18,7 +30,7 @@
             <p class="etdiant">et je suis étudiant en informatique !</p>
         </div>
     </div>
-    
+   
     <div class="container-nav">
         <div class="line">
             <div class="nav">
@@ -28,28 +40,35 @@
                     <a href="#projets" data-image="projets">Projets</a>
                     <a href="#contact" data-image="experiences">Expériences</a>
                 </div>
-                
                 <div class="image-container">
-                    <div class="image-hover" id="img-about">
-                        <img src="test.jpg" alt="À propos">
-                    </div>
-                    <div class="image-hover" id="img-competences">
-                        <img src="test.jpg" alt="Compétences">
-                    </div>
-                    <div class="image-hover" id="img-projets">
-                        <img src="test.jpg" alt="Projets">
-                    </div>
-                    <div class="image-hover" id="img-experiences">
-                        <img src="test.jpg" alt="Expériences">
-                    </div>
+                    <model-viewer id="model-about" class="image-hover" src="Business Man.glb" alt="À propos"
+                        auto-rotate rotation-per-second="60deg"
+                        style="width: 500px; height: 500px; background: transparent;">
+                    </model-viewer>
+                    <model-viewer id="model-competences" class="image-hover" src="Green Notebook.glb" alt="Compétences"
+                            auto-rotate rotation-per-second="60deg"
+                            camera-orbit="40deg 45deg 2m"
+                        style="width: 500px; height: 500px; background: transparent;">
+                    </model-viewer>
+                    <model-viewer id="model-projets" class="image-hover" src="projector.glb" alt="Projets"
+                            auto-rotate rotation-per-second="60deg"
+                            camera-orbit="40deg 90deg 2m"
+                        style="width: 500px; height: 500px; background: transparent;">
+                    </model-viewer>
+                    <model-viewer id="model-experiences" class="image-hover" src="Hour Glass.glb" alt="Expériences"
+                            auto-rotate rotation-per-second="60deg"
+                            camera-orbit="40deg 90deg"
+                        style="width: 500px; height: 500px; background: transparent;">
+                    </model-viewer>
                 </div>
             </div>
         </div>
     </div>
-    
+   
     <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Portfolio de Sami</p>
+    </footer>
 </body>
-<footer>
-    <p>&copy; 2024 Mon Site Web</p>
-</footer>
 </html>
