@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'ClimateCrisis';
-    src: url('font/ClimateCrisis.otf') format('opentype');
+    src: url('../font/ClimateCrisis.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'ChunkFive-Regular';
-    src: url('font/ChunkFive-Regular.otf') format('opentype');
+    src: url('../font/ChunkFive-Regular.otf') format('opentype');
 }
 
 * {
@@ -79,6 +79,7 @@ h1 {
 
 
 .nav {
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -202,7 +203,6 @@ footer {
     color: #FFFFFF;
     text-align: center;
     padding: 20px;
-    font-family: 'ChunkFive-Regular', sans-serif;
 }
 
 @media (max-width: 1200px) {

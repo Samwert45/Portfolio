@@ -1,15 +1,22 @@
 
         @font-face {
             font-family: 'ClimateCrisis';
-            src: url('font/ClimateCrisis.otf') format('opentype');
+            src: url('../font/ChunkFive-Regular.otf') format('opentype');
         }
 
         @font-face {
             font-family: 'ChunkFive-Regular';
-            src: url('font/ChunkFive-Regular.otf') format('opentype');
+            src: url('../font/ChunkFive-Regular.otf') format('opentype');
+        }
+
+
+        @font-face {
+            font-family: 'Inter-Medium';
+            src: url('../font/Inter-Medium.otf') format('opentype');
         }
 
         * {
+            font-family: 'Inter-Medium', Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -77,6 +84,31 @@
         .nav-links a:hover::after {
             width: 100%;
         }
+
+        /* Hero Section */
+.hero-section {
+    font-family: 'ClimateCrisis', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #131200;
+}
+
+.hero-title {
+    font-family: 'ChunkFive-Regular', sans-serif;
+    font-size: 5rem;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 60px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #8555c3;
+}
 
         /* Section Hero About */
         .container-about-hero {
@@ -336,7 +368,6 @@
             color: #FFFFFF;
             text-align: center;
             padding: 20px;
-            font-family: 'ChunkFive-Regular', sans-serif;
         }
 
 

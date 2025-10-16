@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos - Sami OURRAD</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -13,10 +13,15 @@
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="competences.html">Compétences</a></li>
-            <li><a href="projets.html">Projets</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="project.html">Projets</a></li>
         </ul>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">À propos</h1>
+        <p class="hero-subtitle">Qui je suis, mon parcours et mes centres d'intérêt</p>
+    </section>
 
     <!-- Section Hero About -->
     <div class="container-about-hero">
@@ -37,7 +42,7 @@
                 </p>
             </div>
             <div class="about-image">
-                <model-viewer id="model-about" class="image-hover" src="Hour Glass.glb" alt="À propos"
+                <model-viewer id="model-about" class="image-hover" src="3d-object/Hour Glass.glb" alt="À propos"
                     auto-rotate rotation-per-second="60deg"
                     style="width: 500px; height: 500px; background: transparent;">
                 </model-viewer>
