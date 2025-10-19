@@ -8,6 +8,11 @@
     src: url('../font/ChunkFive-Regular.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url('../font/Inter-Medium.otf') format('opentype');
+}
+
 * {
     font-family: 'Inter-Medium', Arial, sans-serif;
     margin: 0;
@@ -24,7 +29,7 @@ body {
 
 /* Navigation */
 .navbar {
-    font-family: 'ChunkFive-Regular', sans-serif;
+            font-family: 'Inter-Medium', Arial, sans-serif;
     position: fixed;
     top: 0;
     left: 0;
