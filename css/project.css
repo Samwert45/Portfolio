@@ -186,6 +186,7 @@ a {
     line-height: 1.6;
     color: #CCCCCC;
     margin-bottom: 20px;
+    border-bottom: 1px solid rgba(133, 85, 195, 0.3);
 }
 
 .project-tags {
