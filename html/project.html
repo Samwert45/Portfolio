@@ -25,6 +25,7 @@
     <!-- Section Projets Professionnels -->
     <section class="section-projects">
         <h2 class="section-title">Projets Professionnels</h2>
+        <p class="section-note"><em>Ces projets sont présentés en adéquation avec les apprentissages critiques attendus en 3ème année de BUT Informatique : réaliser un développement d'application (C1), optimiser des applications (C2) et collaborer au sein d'une équipe informatique (C6), ainsi que certains apprentissages critiques des années précédentes.</em></p>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-image">
@@ -33,10 +34,11 @@
                 <div class="project-content">
                     <h3 class="project-name">Plateforme de packs Anki multilingues</h3>
                     <p class="project-description">
-                        Développement d'une plateforme web pour l'achat de
-                        packs Anki multilingues. L'utilisateur peut choisir
-                        n'importe quelle langue qu'il souhaite apprendre, en fonction
-                        de sa langue maternelle, avec plus de 50 langues disponibles.
+                        Conception et développement d'une plateforme web de distribution de packs Anki multilingues.
+                        L'architecture sépare la logique métier (Python côté serveur) de l'interface statique
+                        (HTML/CSS/JS), permettant de gérer plus de 50 combinaisons de langues sans dupliquer
+                        le code de traitement. Chaque module de génération est indépendant, facilitant
+                        l'ajout de nouvelles langues sans toucher au cœur de l'application.
                         <br><br>
                         Hébergé sur Render : <a href="https://vocapack-static.onrender.com/" target="_blank" class="project-link">vocapack-static.onrender.com</a>
                     </p>
@@ -56,13 +58,13 @@
                 <div class="project-content">
                     <h3 class="project-name">Mini Transformer from Scratch</h3>
                     <p class="project-description">
-                        Mon projet personnel pour comprendre comment fonctionnent réellement
-                        les LLM (comme ChatGPT) en construisant un transformer de zéro.
-                        Implémentation des embeddings, matrices d'attention, calcul des
-                        attention scores et de la loss avec PyTorch et NumPy — pas de magie,
-                        juste les opérations tensorielles à la main.
-                        C'est loin d'être parfait, mais l'objectif c'était de vraiment comprendre,
-                        pas de sortir un produit fini.
+                        Implémentation d'un transformer depuis zéro pour analyser le comportement
+                        réel d'un LLM à chaque étape : évolution de la loss au fil des epochs,
+                        occupation mémoire des matrices d'attention, temps de calcul des opérations
+                        tensorielles. PyTorch a été choisi pour sa capacité à exposer les gradients
+                        et faciliter le débogage couche par couche ; NumPy pour les manipulations
+                        matricielles initiales. L'objectif n'était pas un produit fini, mais une
+                        compréhension profonde du comportement du modèle de bout en bout.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
@@ -80,11 +82,12 @@
                 <div class="project-content">
                     <h3 class="project-name">Site Météorologique avec API Synop</h3>
                     <p class="project-description">
-                        Développement d'une application web météorologique collectant 
-                        et analysant des données via l'API Synop. Génération de 
-                        statistiques en temps réel, visualisation graphique des 
-                        tendances, et stockage historique en base de données pour 
-                        analyse comparative.
+                        Application météorologique construite autour d'une architecture PHP/MySQL
+                        justifiée par la nature des données : collecte cyclique via l'API Synop,
+                        stockage relationnel pour les requêtes historiques, rendu serveur pour
+                        les statistiques agrégées. Le système calcule des métriques en temps réel
+                        (températures, pressions, humidités sur des fenêtres glissantes) et
+                        visualise les tendances via Chart.js.
                     </p>
                     <div class="project-tags">
                         <span class="tag">PHP</span>
@@ -109,13 +112,15 @@
                     <div class="project-content">
                         <h3 class="project-name">Interface de suivi biomécanique - KAIST ExoLab</h3>
                         <p class="project-description">
-                            Développement en collaboration avec une équipe de 4 personnes au 
-                            laboratoire ExoLab de KAIST (Korea Advanced Institute of Science & Technology) 
-                            d'une interface utilisateur pour le suivi en temps réel de données 
-                            biomécaniques issues de capteurs portables (EMG, IMU). L'application 
-                            permet la visualisation graphique en direct, l'enregistrement de 
-                            sessions complètes avec métadonnées (nom, prénom, marqueurs temporels), 
-                            et l'export des données pour analyses approfondies.
+                            Interface de monitoring temps réel pour le laboratoire ExoLab de KAIST
+                            (Corée du Sud), développée en équipe de 4. L'architecture (PyQt5 avec
+                            threading dédié aux capteurs) répond à une contrainte forte : traiter
+                            les flux EMG et IMU à haute fréquence sans geler l'interface graphique,
+                            en maintenant une latence d'affichage dans les seuils requis.
+                            L'application assure la visualisation en direct, l'enregistrement de
+                            sessions avec métadonnées horodatées et l'export pour analyses post-session.
+                            La répartition des tâches et le suivi d'avancement au sein de l'équipe
+                            ont été gérés collectivement avec le responsable du laboratoire.
                         </p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
@@ -134,13 +139,15 @@
                 <div class="project-content">
                     <h3 class="project-name">Infrastructure Réseau Multi-Services</h3>
                     <p class="project-description">
-                        Déploiement et configuration d'une infrastructure réseau complète 
-                        en binôme, incluant les services Web (Apache), SSH, FTP/SFTP et DHCP 
-                        sur Debian. Développement de scripts Bash/Batch pour automatiser le 
-                        déploiement web en CLI, la gestion de configuration Apache avec 
-                        rollback automatique en cas d'erreur, et l'automatisation des 
-                        sauvegardes avec rotation et nettoyage automatique des anciennes 
-                        exécutions.
+                        Déploiement et configuration d'une infrastructure réseau complète sur
+                        Debian en binôme, intégrant Web (Apache), SSH, FTP/SFTP et DHCP en
+                        environnement local. Les scripts Bash/Batch développés analysent
+                        le comportement du système : validation de configuration Apache avant
+                        application, rollback automatique si une anomalie est détectée, rotation
+                        des sauvegardes avec nettoyage des exécutions obsolètes. Cette approche
+                        permet d'observer et de justifier chaque changement d'état avant de le
+                        rendre effectif. La répartition des rôles au sein du binôme a permis
+                        une livraison complète et testée.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Debian</span>
@@ -160,9 +167,13 @@
                 <div class="project-content">
                     <h3 class="project-name">Création d'un site simple statistique accessible à tous sur S3 Bucket</h3>
                     <p class="project-description">
-                        Ce projet consiste à créer un site web statistique simple et accessible à tous, hébergé sur un bucket Amazon S3.
-                        Le site a ensuite été distribué via Amazon CloudFront afin de le rendre rapidement accessible à n’importe qui dans le monde,
-                        tout en bénéficiant d’une meilleure performance et d’une sécurité renforcée.
+                        Déploiement d’un site statistique accessible publiquement via une architecture
+                        cloud AWS : S3 pour l’hébergement statique (coût minimal, disponibilité
+                        automatique) et CloudFront comme CDN mondial pour réduire la latence de
+                        distribution. Ce choix reflète une analyse des enjeux cloud actuels —
+                        scalabilité à la demande, distribution géographique des contenus, sécurité
+                        renforcée via HTTPS imposé par CloudFront — sans infrastructure serveur
+                        à maintenir.
                     </p>
                     <div class="project-tags">
                         <span class="tag">AWS</span>
@@ -188,8 +199,11 @@
             </div>
             <h3 class="learn-title">Architecture Cloud AWS</h3>
             <p class="learn-description">
-                Apprentissage approfondi des services AWS : EC2, S3, Lambda,
-                RDS, CloudFront. Préparation certification AWS Cloud Practitioner.
+                Veille active sur l'écosystème AWS — EC2, S3, Lambda, RDS, CloudFront —
+                en suivant l'évolution des services et leurs cas d'usage concrets.
+                La préparation à la certification AWS Cloud Practitioner structure cette
+                veille autour des enjeux économiques du cloud : modèles de facturation,
+                responsabilité partagée, et choix des services adaptés à chaque contrainte.
             </p>
             <div class="learn-resources">
                 <span class="resource">AWS Documentation</span>
@@ -200,18 +214,28 @@
 
         <div class="learning-card">
             <div class="learn-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="3" cy="6" r="1.5"/><circle cx="3" cy="12" r="1.5"/><circle cx="3" cy="18" r="1.5"/>
+                    <circle cx="12" cy="3" r="1.5"/><circle cx="12" cy="9" r="1.5"/><circle cx="12" cy="15" r="1.5"/><circle cx="12" cy="21" r="1.5"/>
+                    <circle cx="21" cy="12" r="1.5"/>
+                    <line x1="4.4" y1="5.5" x2="10.6" y2="3.5"/><line x1="4.4" y1="6" x2="10.6" y2="9"/><line x1="4.4" y1="6.5" x2="10.6" y2="15"/>
+                    <line x1="4.4" y1="11.5" x2="10.6" y2="3.5"/><line x1="4.4" y1="12" x2="10.6" y2="9"/><line x1="4.4" y1="12.5" x2="10.6" y2="15"/>
+                    <line x1="4.4" y1="17.5" x2="10.6" y2="9"/><line x1="4.4" y1="18" x2="10.6" y2="15"/><line x1="4.4" y1="18.5" x2="10.6" y2="21"/>
+                    <line x1="13.4" y1="3.5" x2="19.6" y2="12"/><line x1="13.4" y1="9" x2="19.6" y2="12"/>
+                    <line x1="13.4" y1="15" x2="19.6" y2="12"/><line x1="13.4" y1="21" x2="19.6" y2="12"/>
                 </svg>
             </div>
             <h3 class="learn-title">Machine Learning & IA</h3>
             <p class="learn-description">
-                Exploration des algorithmes de ML (régression, classification),
-                réseaux de neurones et NLP. Utilisation de TensorFlow et PyTorch.
+                Compréhension bas niveau des architectures modernes : implémentation
+                d'embeddings, mécanisme d'attention multi-tête, couches feed-forward
+                et projection de sortie. En parallèle, exploration des algorithmes
+                classiques (régression, classification, réseaux de neurones, NLP)
+                et étude comparative de TensorFlow vs. PyTorch selon les usages
+                (déploiement vs. recherche).
             </p>
             <div class="learn-resources">
-                <span class="resource">Coursera ML Andrew Ng</span>
+                <span class="resource">3Blue1Brown Youtube</span>
                 <span class="resource">Projets persos</span>
             </div>
         </div>
@@ -229,12 +253,16 @@
             </div>
             <h3 class="learn-title">DevOps & Containerisation</h3>
             <p class="learn-description">
-Maîtrise de Docker, CI/CD avec GitLab/GitHub Actions. 
-Virtualisation avec Proxmox et VirtualBox.
+                Apprentissage des pratiques orientées production : conteneurisation Docker
+                (images légères, multi-stage builds), intégration et déploiement continus
+                via GitLab CI et GitHub Actions. Proxmox et VirtualBox permettent de simuler
+                des environnements réalistes avant mise en production réelle. Cette veille
+                nourrit directement les décisions d'architecture d'infrastructure dans
+                les projets.
             </p>
             <div class="learn-resources">
                 <span class="resource">Documentation officielle</span>
-                <span class="resource">Labs pratiques</span>
+                <span class="resource">Pratique en alternance — EISGE</span>
                 <span class="resource">Déploiements persos</span>
             </div>
         </div>
@@ -246,22 +274,25 @@ Virtualisation avec Proxmox et VirtualBox.
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                 </svg>
             </div>
-            <h3 class="learn-title">Cybersécurité (bases)</h3>
+            <h3 class="learn-title">Cybersécurité</h3>
             <p class="learn-description">
-Analyse des protocoles réseau (TCP/IP) et des trames avec Wireshark.
-Pratique sur des plateformes d’entraînement comme RootMe (challenges d’initiation en sécurité et cryptographie).
+                Veille sécurité structurée autour de l’analyse des protocoles réseau
+                (TCP/IP, trames Wireshark) et de la pratique sur des plateformes
+                d’entraînement (RootMe). Ces challenges révèlent les
+                surfaces d’attaque réelles des applications et systèmes — une connaissance
+                directement utile pour sécuriser les architectures développées par ailleurs.
             </p>
             <div class="learn-resources">
-                <span class="resource">OWASP Resources</span>
-                <span class="resource">RootMe / TryHackMe</span>
-                <span class="resource">CTF Challenges</span>
+                <span class="resource">Wireshark / analyse réseau</span>
+                <span class="resource">RootMe</span>
+                <span class="resource">Pratique en alternance — EISGE</span>
             </div>
         </div>
     </div>
 </section>
 
     <footer>
-        <p>&copy; 2024 Portfolio de Sami OURRAD</p>
+        <p>&copy; 2026 Portfolio de Sami OURRAD</p>
     </footer>
 
 <script>

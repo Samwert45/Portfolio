@@ -23,8 +23,8 @@
         }
 
         body {
-            background-color: #131200;
-            color: #FFFFFF;
+            background-color: #0d0d14;
+            color: #f0f0f5;
             overflow-x: hidden;
         }
 
@@ -38,8 +38,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            backdrop-filter: blur(10px);
+            padding: 18px 50px;
+            background: rgba(13,13,20,0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
             z-index: 1000;
         }
 
@@ -95,20 +97,24 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #131200;
+    background-color: #0d0d14;
 }
 
 .hero-title {
     font-family: 'ChunkFive-Regular', sans-serif;
     font-size: 5rem;
     text-align: center;
-    color: #FFFFFF;
+    background: linear-gradient(135deg, #ffffff 40%, #a37fe0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 60px;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: #8555c3;
+    color: #a37fe0;
+    letter-spacing: 0.03em;
 }
 
         /* Section Hero About */
@@ -117,7 +123,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #131200;
+            background-color: #0d0d14;
             padding-top: 80px;
         }
 
@@ -150,8 +156,8 @@
         .about-description {
             font-family: 'Inter-Medium', Arial, sans-serif;
             font-size: 1.1rem;
-            line-height: 1.6;
-            color: #CCCCCC;
+            line-height: 1.7;
+            color: #9999b3;
             margin-bottom: 30px;
         }
 
@@ -164,8 +170,8 @@
 
         /* Section Parcours */
         .container-parcours {
-            padding: 100px 0;
-            background: linear-gradient(to bottom, #131200, #2b1842);
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #0d0d14, #161630);
         }
 
         .parcours-title {
@@ -206,10 +212,14 @@
 
         .timeline-content {
             padding: 20px 30px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #161622;
             border-radius: 10px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(133, 85, 195, 0.3);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: border-color 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: rgba(133, 85, 195, 0.5);
         }
 
         .timeline-date {
@@ -242,8 +252,8 @@
 
         /* Section Centres d'intérêt */
         .container-interets {
-            padding: 100px 0;
-            background-color: #2b1842;
+            padding: 80px 0;
+            background-color: #161630;
         }
 
         .interets-title {
@@ -265,17 +275,17 @@
 
 
         .interet-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            background-color: #161622;
+            border-radius: 12px;
             padding: 30px;
             text-align: center;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .interet-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            border-color: rgba(133, 85, 195, 0.5);
         }
 
         .interet-icon {
@@ -302,7 +312,7 @@
             position: sticky;
             top: 0;
             height: 70vh;
-            background: linear-gradient(to top, #8555c3, #131200);
+            background: linear-gradient(to top, #1e1535, #0d0d14);
         }
 
         .line {
@@ -363,13 +373,98 @@
             color: #8555c3;
         }
 
+        /* Sous-titre section intérêts */
+        .interets-subtitle {
+            font-family: 'Inter-Medium', Arial, sans-serif;
+            font-size: 0.95rem;
+            color: #9999b3;
+            text-align: center;
+            margin-top: -40px;
+            margin-bottom: 50px;
+            letter-spacing: 0.02em;
+        }
+
+        /* Popup / Modale */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .popup-modal {
+            background: #161622;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.25s ease;
+        }
+
+        .popup-overlay.active .popup-modal {
+            transform: translateY(0);
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #9999b3;
+            font-size: 1.6rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .popup-close:hover {
+            color: #f0f0f5;
+        }
+
+        .popup-title {
+            font-family: 'Inter-Medium', Arial, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #a37fe0;
+            margin-bottom: 16px;
+            letter-spacing: 0.01em;
+        }
+
+        .popup-body {
+            font-family: 'Inter-Medium', Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #9999b3;
+        }
+
+        .interet-card {
+            cursor: pointer;
+        }
+
         /* Footer */
         footer {
             font-family: 'Inter-Medium', Arial, sans-serif;
-            background-color: #2b1842;
-            color: #FFFFFF;
+            background-color: #161630;
+            color: #f0f0f5;
             text-align: center;
             padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.07);
         }
 
 
