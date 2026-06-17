@@ -53,25 +53,26 @@
 
             <div class="project-card">
                 <div class="project-image">
-                    <img src="../img/LLM.png" alt="Traducteur Français-Kabyle IA">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-name">Mini Transformer from Scratch</h3>
+                    <h3 class="project-name">Gateway IAM multi-provisionnement — MidPoint</h3>
                     <p class="project-description">
-                        Implémentation d'un transformer depuis zéro pour analyser le comportement
-                        réel d'un LLM à chaque étape : évolution de la loss au fil des epochs,
-                        occupation mémoire des matrices d'attention, temps de calcul des opérations
-                        tensorielles. PyTorch a été choisi pour sa capacité à exposer les gradients
-                        et faciliter le débogage couche par couche ; NumPy pour les manipulations
-                        matricielles initiales. L'objectif n'était pas un produit fini, mais une
-                        compréhension profonde du comportement du modèle de bout en bout.
+                        Conception et déploiement d'une gateway IAM basée sur MidPoint pour
+                        automatiser le provisionnement d'identités sur plusieurs applications cibles
+                        depuis une source unique. La solution s'intègre dans un système plus large
+                        regroupant plusieurs applications métier, avec un workflow d'approbation
+                        par email et des niveaux d'approbation configurables (demandeur → approbateur
+                        → administrateur). Cette architecture garantit la traçabilité des demandes,
+                        la cohérence des droits entre applications et la gouvernance des accès
+                        à l'échelle du SI.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">NumPy</span>
-                        <span class="tag">Attention is all you need</span>
-                        <span class="tag">Let's build ChatGPT</span>
+                        <span class="tag">MidPoint</span>
+                        <span class="tag">IAM</span>
+                        <span class="tag">RBAC</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">XML</span>
+                        <span class="tag">Workflow</span>
                     </div>
                 </div>
             </div>
@@ -84,10 +85,10 @@
                     <p class="project-description">
                         Application météorologique construite autour d'une architecture PHP/MySQL
                         justifiée par la nature des données : collecte cyclique via l'API Synop,
-                        stockage relationnel pour les requêtes historiques, rendu serveur pour
-                        les statistiques agrégées. Le système calcule des métriques en temps réel
-                        (températures, pressions, humidités sur des fenêtres glissantes) et
-                        visualise les tendances via Chart.js.
+                        conception du schéma relationnel et stockage pour les requêtes historiques,
+                        rendu serveur pour les statistiques agrégées. Le système calcule des métriques
+                        en temps réel (températures, pressions, humidités sur des fenêtres glissantes)
+                        et visualise les tendances via Chart.js — du JSON Synop jusqu'à l'affichage graphique.
                     </p>
                     <div class="project-tags">
                         <span class="tag">PHP</span>
@@ -139,15 +140,13 @@
                 <div class="project-content">
                     <h3 class="project-name">Infrastructure Réseau Multi-Services</h3>
                     <p class="project-description">
-                        Déploiement et configuration d'une infrastructure réseau complète sur
-                        Debian en binôme, intégrant Web (Apache), SSH, FTP/SFTP et DHCP en
-                        environnement local. Les scripts Bash/Batch développés analysent
-                        le comportement du système : validation de configuration Apache avant
-                        application, rollback automatique si une anomalie est détectée, rotation
-                        des sauvegardes avec nettoyage des exécutions obsolètes. Cette approche
-                        permet d'observer et de justifier chaque changement d'état avant de le
-                        rendre effectif. La répartition des rôles au sein du binôme a permis
-                        une livraison complète et testée.
+                        Installation et configuration d'une infrastructure réseau complète sur
+                        Debian en binôme : déploiement de services Web (Apache), SSH, FTP/SFTP
+                        et DHCP depuis un environnement vierge, avec attribution des rôles entre
+                        membres du binôme pour chaque service. Les scripts Bash/Batch développés
+                        automatisent la gestion de configuration : validation avant application,
+                        rollback automatique si une anomalie est détectée, rotation des sauvegardes
+                        avec nettoyage des versions obsolètes.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Debian</span>
@@ -186,7 +185,68 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Analyse réflexive C1 -->
+    <section class="section-projects reflexive-section">
+        <h2 class="section-title">Analyse réflexive — Compétence C1</h2>
+        <p class="section-note"><em>Réaliser un développement d'application — niveau Confirmé</em></p>
+
+        <div class="reflexive-grid">
+            <div class="reflexive-ac">
+                <span class="reflexive-badge">AC 1</span>
+                <h3 class="reflexive-ac-title">Choisir et implémenter les architectures adaptées</h3>
+                <p class="reflexive-description">
+                    À travers mes projets, j'ai systématiquement justifié mes choix d'architecture
+                    en fonction des contraintes du problème : séparation front/back pour la plateforme
+                    Anki, architecture de gateway IAM centralisée (MidPoint) pour le multi-provisionnement,
+                    threading dédié pour le traitement temps réel des capteurs EMG/IMU à KAIST, et
+                    modèle PHP/MySQL adapté aux données cycliques du site météorologique.
+                </p>
+                <div class="reflexive-projects">
+                    <span class="reflexive-tag">Plateforme Anki</span>
+                    <span class="reflexive-tag">Passerelle IAM</span>
+                    <span class="reflexive-tag">KAIST ExoLab</span>
+                    <span class="reflexive-tag">Site Météorologique</span>
+                </div>
+            </div>
+
+            <div class="reflexive-ac">
+                <span class="reflexive-badge">AC 2</span>
+                <h3 class="reflexive-ac-title">Faire évoluer une application existante</h3>
+                <p class="reflexive-description">
+                    Mon alternance chez EISGE m'a placé directement dans ce contexte :
+                    intégration dans une application web existante (Angular, PHP, TypeScript),
+                    ajout de fonctionnalités Git intégrées, développement d'un outil interne
+                    en C++/Qt, et maintien d'un pipeline CI/CD assurant la continuité des
+                    livraisons sans régressions.
+                </p>
+                <div class="reflexive-projects">
+                    <span class="reflexive-tag">Alternance EISGE</span>
+                </div>
+            </div>
+
+            <div class="reflexive-ac">
+                <span class="reflexive-badge">AC 3</span>
+                <h3 class="reflexive-ac-title">Intégrer des solutions dans un environnement de production</h3>
+                <p class="reflexive-description">
+                    Plusieurs projets ont abouti à des déploiements en environnement réel :
+                    le site météorologique avec base de données persistante et accès public,
+                    l'infrastructure réseau multi-services sur Debian avec rollback automatique,
+                    le site hébergé sur AWS S3 distribué via CloudFront, l'interface KAIST
+                    utilisée quotidiennement par le laboratoire, et la passerelle IAM déployée
+                    en production dans le SI d'EISGE avec des intégrations applicatives réelles.
+                </p>
+                <div class="reflexive-projects">
+                    <span class="reflexive-tag">Site Météorologique</span>
+                    <span class="reflexive-tag">Infrastructure Réseau</span>
+                    <span class="reflexive-tag">AWS S3 / CloudFront</span>
+                    <span class="reflexive-tag">KAIST ExoLab</span>
+                    <span class="reflexive-tag">Passerelle IAM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- Section Veille Technologique -->
 <section class="section-projects">
     <h2 class="section-title">Veille Technologique & Apprentissage</h2>

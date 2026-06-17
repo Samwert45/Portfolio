@@ -304,6 +304,78 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.07);
 }
 
+/* Analyse réflexive */
+.reflexive-section {
+    background: linear-gradient(to bottom, #161630, #0d0d14);
+}
+
+.reflexive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.reflexive-ac {
+    background: #161622;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.reflexive-ac:hover {
+    border-color: rgba(133, 85, 195, 0.4);
+}
+
+.reflexive-badge {
+    display: inline-block;
+    background: rgba(133, 85, 195, 0.15);
+    border: 1px solid rgba(133, 85, 195, 0.4);
+    color: #a37fe0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.reflexive-ac-title {
+    font-family: 'Inter-Medium', Arial, sans-serif;
+    font-size: 1.05rem;
+    color: #f0f0f5;
+    line-height: 1.4;
+}
+
+.reflexive-description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #9999b3;
+    flex: 1;
+}
+
+.reflexive-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.reflexive-tag {
+    font-size: 0.78rem;
+    color: #7a7a9a;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
 /* Section Veille Technologique */
 .learning-grid {
     display: grid;
